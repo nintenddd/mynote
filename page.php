@@ -24,13 +24,15 @@ get_header();
 			<div class="single-post-header">
 				<div class="container">
 					<h1 id="post-title" itemprop="headline"><?php the_title(); ?></h1>
-					<div class="post-mynote-buttons">
-						<?php mynote_edit_button(); ?>
-						<?php mynote_comment_button(); ?>
-					</div>
-					<div class="post-meta">
-						<?php mynote_author_posted_date( true ); ?>
-					</div>
+					<?php if(is_single()) : ?>
+						<div class="post-mynote-buttons">
+							<?php mynote_edit_button(); ?>
+							<?php mynote_comment_button(); ?>
+						</div>
+						<div class="post-meta">
+							<?php mynote_author_posted_date( true ); ?>
+						</div>
+					<?php endif; ?>
 				</div><!-- .container -->
 			</div><!-- .single-post-header -->
 
